@@ -1,0 +1,24 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    restart: unless-stopped
+    networks:
+      - application
+      - default
+    ports:
+      - "8000:8000"
+
+  redis:
+    image: bitnami/redis:latest
+    networks:
+      - application
+      - default
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+
+networks:
+  application:

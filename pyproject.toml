@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "iot-backend"
+version = "0.1.0"
+description = ""
+authors = ["Slava Kuryaev <92830706+necrosskull@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = {extras = ["all"], version = "^0.110.0"}
+redis = "^5.0.3"
+pydantic = "^2.6.4"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
