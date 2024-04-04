@@ -38,6 +38,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -45,7 +46,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.mount("/", StaticFiles(directory="app/static", html=True), name="static")
 
 
 @app.get("/lamps", response_model=list[Lamp])
@@ -69,3 +69,6 @@ async def update_lamp(lamp: Lamp):
 async def read_lamp(lamp_name: DefaultLamps):
     status = LampStatus(await redis.get(f"lamps:{lamp_name}"))
     return Lamp(name=lamp_name, status=status)
+
+
+app.mount("/", StaticFiles(directory="app/static", html=True), name="static")
