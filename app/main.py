@@ -3,6 +3,7 @@ from enum import Enum
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from redis.asyncio import Redis
 
@@ -44,6 +45,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.mount("/", StaticFiles(directory="app/static", html=True), name="static")
 
 
 @app.get("/lamps", response_model=list[Lamp])
