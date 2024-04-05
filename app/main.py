@@ -20,8 +20,8 @@ class LampStatus(Enum):
 class DefaultLamps(Enum):
     lamp1 = "lamp1"
     lamp2 = "lamp2"
-    lamp3 = "lamp3"
-    lamp4 = "lamp4"
+    # lamp3 = "lamp3"
+    # lamp4 = "lamp4"
 
 
 class Lamp(BaseModel):
