@@ -4,6 +4,6 @@
 
 ### Остальные части проекта
 
-- [🤖 Прошивка микроконтроллера](https://github.com/necrosskull/iot_backend)
+- [🤖 Прошивка микроконтроллера](https://github.com/necrosskull/sim800L_HTTP)
 - [📱 Фронтенд часть](https://github.com/necrosskull/iot_frontend)
  
